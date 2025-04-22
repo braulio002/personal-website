@@ -1,0 +1,440 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Comic Sans MS", "Arial", sans-serif;
+    background-color: #000066;
+    background-image: url('assets/blinkingstarsbg.gif');
+    background-attachment: fixed;
+    color: #00FF00;
+    min-height: 100vh;
+    padding: 20px;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* ANIMATIONS */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+@keyframes rainbow {
+    0% { color: #FF00FF; }
+    20% { color: #00FFFF; }
+    40% { color: #FFFF00; }
+    60% { color: #FF00FF; }
+    80% { color: #00FF00; }
+    100% { color: #FF00FF; }
+}
+
+/* RETRO TEXT EFFECTS */
+.blinking-text {
+    animation: blink 1s step-end infinite;
+    color: #FF00FF;
+    text-shadow: 2px 2px #000033;
+    font-size: 2.5rem;
+    margin: 20px 0;
+}
+
+.neon-text {
+    color: #00FFFF;
+    text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF;
+}
+
+.glow-text {
+    color: #FF00FF;
+    text-shadow: 0 0 8px #FF00FF;
+    animation: rainbow 3s linear infinite;
+}
+
+.highlight-text {
+    color: #FFFF00;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* RETRO ELEMENTS */
+.retro-border {
+    border: 3px solid #00FFFF;
+    box-shadow: 0 0 10px #00FFFF;
+    padding: 5px;
+    background-color: #000033;
+}
+
+.retro-section {
+    background-color: rgba(0, 0, 51, 0.85);
+    border: 3px dashed #00FFFF;
+    padding: 25px;
+    margin: 30px auto;
+    width: 95%;
+    max-width: 800px;
+    position: relative;
+}
+
+.retro-section::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 1px solid #FF00FF;
+    pointer-events: none;
+}
+
+.retro-table {
+    width: 95%;
+    max-width: 800px;
+    margin: 25px auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: #330066;
+    border: 3px solid #00FFFF;
+    box-shadow: 0 0 15px #00FFFF;
+}
+
+.retro-table th, .retro-table td {
+    padding: 12px;
+    border: 1px solid #00FFFF;
+    text-align: center;
+}
+
+.retro-table th {
+    background-color: #000033;
+    color: #FF00FF;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+.retro-list {
+    text-align: left;
+    display: inline-block;
+    margin: 15px auto;
+    padding-left: 30px;
+    list-style-type: square;
+}
+
+.retro-list li {
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+}
+
+/* SECTION GIFS */
+.section-gif {
+    display: block;
+    margin: 0 auto 20px;
+    max-width: 300px;
+}
+
+#qobuz .section-gif {
+    max-width: 200px;
+}
+
+/* NAVIGATION */
+.retro-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 12px;
+    padding: 12px;
+    background-color: rgba(51, 0, 102, 0.8);
+    margin: 20px auto;
+    width: 100%;
+    max-width: 830px;
+    border: 3px solid #FF00FF;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+}
+
+.nav-button {
+    transition: all 0.3s ease;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.nav-button img {
+    height: 60px;
+    width: auto;
+    max-width: 140px;
+    object-fit: contain;
+}
+
+.nav-button:hover {
+    transform: scale(1.25) rotate(5deg);
+    filter: brightness(1.3);
+}
+
+.retro-nav img[alt="Qobuz"] {
+    width: auto !important;
+    height: 60px !important;
+    padding: 2px;
+}
+
+/* MARQUEE */
+.marquee {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: rgba(0, 0, 51, 0.9);
+    border-top: 2px solid #00FFFF;
+    border-bottom: 2px solid #00FFFF;
+    padding: 12px 0;
+    margin: 25px 0;
+    box-shadow: 0 0 20px #00FFFF;
+}
+
+.marquee span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 20s linear infinite;
+    font-size: 1.1rem;
+    color: #FFFF00;
+}
+
+/* CD SECTION LAYOUT */
+.cd-content-container {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.cd-left-content {
+    flex: 1;
+}
+
+.cd-right-gif {
+    flex-shrink: 0;
+    width: auto;
+}
+
+/* GIF ROWS */
+.gif-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 20px 0;
+    gap: 20px;
+}
+
+.gif-item {
+    max-width: 200px;
+    height: auto;
+}
+
+/* GAMES SECTION TABLE CONTAINER */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+/* DIVIDERS*/
+.divider {
+    border: none;
+    height: 4px;
+    background: linear-gradient(to right, 
+        transparent, 
+        #330066, 
+        #FF00FF, 
+        #00FFFF, 
+        #330066, 
+        transparent);
+    margin: 30px auto;
+    width: 95%;
+    max-width: 800px;
+    box-shadow: 0 0 10px #FF00FF;
+}
+
+/* GUESTBOOK */
+.guestbook {
+    background-color: rgba(0, 0, 51, 0.85);
+    border: 3px dashed #00FFFF;
+    padding: 25px;
+    margin: 30px auto;
+    width: 95%;
+    max-width: 800px;
+}
+
+.guestbook h2 {
+    color: #FF00FF;
+    text-shadow: 0 0 8px #FF00FF;
+    margin-bottom: 20px;
+}
+
+.guestbook-entries {
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.entry {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: rgba(51, 0, 102, 0.5);
+    border-left: 3px solid #00FFFF;
+}
+
+.entry p {
+    margin: 8px 0;
+    color: #00FF00;
+}
+
+.retro-button {
+    background: linear-gradient(#330066, #000033);
+    border: 2px solid #00FFFF;
+    color: #00FFFF;
+    padding: 10px 20px;
+    font-family: "Comic Sans MS", cursive;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 10px;
+}
+
+.retro-button:hover {
+    background: linear-gradient(#FF00FF, #330066);
+    box-shadow: 0 0 15px #FF00FF;
+}
+
+.entry-gif {
+    margin: 10px 0;
+    text-align: left;
+}
+
+.gif-no-border {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    background: none !important;
+    display: block;
+    max-width: 100px;
+    height: auto;
+    margin: 0;
+}
+
+/* FOOTER */
+.retro-footer {
+    font-size: 1rem;
+    color: #FF00FF;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: rgba(0, 0, 51, 0.8);
+    border-top: 3px solid #00FFFF;
+}
+
+/* COUNTER */
+.fake-db-counter {
+    font-family: 'Courier New', monospace;
+    font-size: 1.1em;
+    color: #00FF00;
+    background-color: #000033;
+    padding: 2px 6px;
+    border: 1px solid #00FFFF;
+    border-radius: 3px;
+    text-shadow: 0 0 3px #00FF00;
+}
+
+.counter-flair {
+    font-family: 'Courier New', monospace;
+    font-size: 0.8em;
+    color: #888;
+    margin-left: 5px;
+    opacity: 0.7;
+}
+
+.retro-counter {
+    display: inline-block;
+    padding: 2px 8px;
+    background-color: #000033;
+    color: #00FF00;
+    font-family: 'Courier New', monospace;
+    font-size: 1.2em;
+    border: 2px solid #00FFFF;
+    text-shadow: 0 0 5px #00FF00;
+    animation: blink 0.5s step-end infinite alternate;
+}
+
+/* CURSOR TRAIL */
+#cursor-trail {
+    position: fixed;
+    height: 12px;
+    width: 12px;
+    background-color: #FF00FF;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: screen;
+}
+
+/* FALLING STARS */
+.falling-star {
+    position: fixed;
+    background-color: white;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    filter: blur(0.5px);
+    animation: fall linear;
+}
+
+/* QOBUZ SPECIFIC SYLES */
+#qobuz .retro-list {
+    text-align: left;
+    margin-left: 20px;
+}
+
+#qobuz a img.retro-border {
+    width: 120px !important;
+    height: auto !important;
+    max-width: none !important;
+    display: inline-block;
+    margin: 5px auto;
+    padding: 3px;
+}
+
+#qobuz a:hover img.retro-border {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+.qobuz-logo {
+    max-width: 180px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.qobuz-link {
+    margin: 15px 0;
+}
+
+.qobuz-footer-gif {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.qobuz-footer-gif img {
+    max-width: 100%;
+    width: 500px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}

@@ -1,0 +1,190 @@
+@media (max-width: 992px) {
+    .retro-nav {
+        max-width: 700px;
+        gap: 10px;
+    }
+    
+    .nav-button img {
+        height: 55px;
+        max-width: 130px;
+    }
+    
+    .section-gif, .gif-item {
+        max-width: 280px;
+    }
+    
+    .gif-item[alt="Movie Reel"] {
+        max-width: 120px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .retro-section {
+        padding: 20px;
+        margin: 20px auto;
+    }
+    
+    .retro-nav {
+        gap: 8px;
+        padding: 10px;
+        max-width: 95%;
+        flex-wrap: wrap;
+    }
+    
+    .nav-button img {
+        height: 50px;
+        max-width: 110px;
+    }
+    
+    .gif-item, .section-gif,
+    .retro-border:not(.nav-button img) {
+        max-width: 250px !important;
+        height: auto !important;
+    }
+    
+    .gif-item[alt="Movie Reel"] {
+        max-width: 100px !important;
+    }
+    
+    /* Stack table cause it doesn't want to cooperate */
+    .retro-table {
+        display: block;
+    }
+    
+    .retro-table thead,
+    .retro-table tbody,
+    .retro-table tr,
+    .retro-table th,
+    .retro-table td {
+        display: block;
+        width: 100% !important;
+    }
+    
+    .retro-table th {
+        background-color: #000033;
+        padding: 10px;
+    }
+    
+    .retro-table tr {
+        margin-bottom: 15px;
+    }
+    
+    /* Specific sections */
+    #qobuz .section-gif {
+        max-width: 180px !important;
+    }
+    
+    .cd-content-container {
+        flex-direction: column;
+    }
+    
+    .cd-right-gif {
+        margin-top: 20px;
+        align-self: center;
+    }
+    
+    /* Tables n Text */
+    .retro-table {
+        font-size: 0.9rem;
+    }
+    
+    .blinking-text {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    /* Games section */
+    #games .retro-table {
+        font-size: 0.9rem;
+    }
+    
+    #games .retro-list {
+        padding-left: 20px;
+    }
+    
+    #games .retro-list li {
+        margin-bottom: 8px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    body {
+        padding: 10px;
+    }
+    
+    .nav-button img {
+        height: 44px;
+        max-width: 90px;
+    }
+    
+    .gif-item {
+        max-width: 200px !important;
+    }
+    
+    .gif-item[alt="Movie Reel"] {
+        max-width: 80px !important;
+    }
+    
+    .section-gif {
+        max-width: 220px !important;
+    }
+    
+    .construction-banners {
+        flex-direction: column;
+    }
+    
+    .construction-banners img {
+        max-width: 80%;
+        margin-bottom: 8px;
+    }
+    
+    .guestbook {
+        padding: 15px;
+    }
+    
+    .footer-badges {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .marquee span {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .nav-button img {
+        height: 40px;
+        max-width: 80px;
+    }
+    
+    .section-gif, .gif-item {
+        max-width: 180px !important;
+    }
+    
+    .gif-item[alt="Movie Reel"] {
+        max-width: 60px !important;
+    }
+    
+    #qobuz .section-gif {
+        max-width: 150px !important;
+    }
+    
+    .retro-nav {
+        gap: 6px;
+        padding: 8px;
+    }
+    
+    .blinking-text {
+        font-size: 1.8rem;
+    }
+}
